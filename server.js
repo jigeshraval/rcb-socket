@@ -1,13 +1,14 @@
 let app = require('express'); 
 let server = require('http').createServer(app);
 let io = require('socket.io')(server, {
-    origins: ["http://localhost:8101", 'http://localhost:8100'],
+    origins: ["*"],
     cors: {
-        origin: "http://localhost:8100",
+        origin: "*",
         methods: ["GET", "POST"]
     }
 })
-let port = 3001;
+
+let port = 47000;
 
 server.listen(port, () => {
     console.log('listening on ' + port);
